@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="flex flex-col z-10"> 
+        <ul class="text-center flex flex-col gap-1 lg:gap-2 lg:p-5 p-2 rounded-md">
+            <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="/hello/" class="lg:text-4xl text-xl font-bold ">TDP ScholarHub Portal</a></li>
+            <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="#" class="lg:text-4xl text-xl font-bold">Documentation</a></li>
+            <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="/demonstration-video" class="lg:text-4xl text-xl font-bold">Demonstration Video</a></li>
+        </ul>
+    </div>
+
+    <div class="flex justify-center fixed">
+        <img class="w-1/2 opacity-10" src="{{ url_for('static', filename='images/TDP_LOGO.png') }}" alt="TDP Logo">
+    </div>
+
+{% endblock %}

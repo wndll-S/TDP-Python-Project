@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="flex flex-col justify-center items-center">
+        <div class="flex flex-row">
+            <div class="w-1/2"> 
+                <img class="" src="{{ url_for('static', filename='images/TDP_LOGO.png') }}" alt="TDP Logo">
+            </div>
+        </div>
+        <a href="/navigation" class="btn btn-primary shadow-md ">Learn More!</a>
+    </div>
+    
+    <script>
+        $('#home').remove()
+    </script>
+{% endblock %}

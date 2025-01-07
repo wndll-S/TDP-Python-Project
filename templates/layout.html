@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+</head>
+<body class="bg-[rgb(245,242,235)]">
+    <a href="/" id="home" class="btn btn-primary fixed">Home</a>
+    <div class="h-screen bg-[rgb(245,242,235)] flex items-center justify-center font-serif">
+        {% block content %} {%endblock%}
+    </div>
+    <script src="{{ url_for('static', filename='js/navigation.js') }}"></script>
+</body>
+</html>
