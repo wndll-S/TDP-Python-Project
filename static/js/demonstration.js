@@ -1,25 +1,35 @@
-// Function to stop video playback by resetting the iframe source
+// Function to stop video playback by clearing the iframe source
 function stopVideo(iframeId) {
     var iframe = document.getElementById(iframeId);
-    var src = iframe.src;
-    iframe.src = '';  // Temporarily clear the src to stop playback
-    iframe.src = src; // Reset the src to start the video from the beginning
+    iframe.src = ''; // Clear the src to stop playback
+}
+
+// Function to set and play video
+function playVideo(iframeId, videoSrc) {
+    var iframe = document.getElementById(iframeId);
+    iframe.src = videoSrc; // Set the src to start playback
 }
 
 // Switch to student video
-$("#studentAccount").click(function(){
+$("#studentList").click(function(){
+    toggleActiveClass("student");
     // Show and hide corresponding videos
     $("#studentVid").removeClass("hidden");
     $("#adminVid").addClass("hidden");
     $("#staffVid").addClass("hidden");
-    
+
     // Stop any active video before switching
     stopVideo('adminIframe');
     stopVideo('staffIframe');
+
+    // Play student video
+    const studentVideoSrc = $("#studentVid").data("video");
+    playVideo('studentIframe', studentVideoSrc);
 });
 
 // Switch to staff video
-$("#staffAccount").click(function(){
+$("#staffList").click(function(){
+    toggleActiveClass("staff");
     // Show and hide corresponding videos
     $("#staffVid").removeClass("hidden");
     $("#adminVid").addClass("hidden");
@@ -28,10 +38,31 @@ $("#staffAccount").click(function(){
     // Stop any active video before switching
     stopVideo('adminIframe');
     stopVideo('studentIframe');
+
+    // Play staff video
+    const staffVideoSrc = $("#staffVid").data("video");
+    playVideo('staffIframe', staffVideoSrc);
 });
 
-$(".sibling").click(
-    function() {
-        $(this).addClass('hidden');
-    }
-);
+// Switch to admin video
+$("#adminList").click(function(){
+    toggleActiveClass("admin");
+    // Show and hide corresponding videos
+    $("#adminVid").removeClass("hidden");
+    $("#studentVid").addClass("hidden");
+    $("#staffVid").addClass("hidden");
+    // Stop any active video before switching
+    stopVideo('studentIframe');
+    stopVideo('staffIframe');
+
+    // Play admin video
+    const adminVideoSrc = $("#adminVid").data("video");
+    playVideo('adminIframe', adminVideoSrc);
+});
+
+function toggleActiveClass(id) {
+    $('#vidSelect').hide();
+    $('.sibling').removeClass("btn-active");
+    $("#"+ id + "List").addClass("btn-active");
+}
+

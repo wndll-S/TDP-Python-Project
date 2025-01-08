@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="bg-gray-50 fixed">
+    </div>
+    <iframe class="w-full h-screen" src="{{ pdf_url }}"></iframe>
+    <script>
+        $('#home').remove()
+    </script>
+{% endblock %}

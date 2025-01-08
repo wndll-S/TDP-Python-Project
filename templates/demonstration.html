@@ -1,22 +1,32 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div> 
+    <div class="z-10"> 
+        <h2 id="vidSelect" class="text-center font-bold text-5xl ">SELECT AN ACCOUNT</h2>
         <ul class="text-center flex flex-col gap-1 lg:gap-2 lg:p-5 p-2 rounded-md">
-            <li id="studentList" class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling "><button id="studentAccount" class="lg:text-4xl text-xl font-bold ">Student</button></li>
-            <li id="staffList" class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><button id="staffAccount" class="lg:text-4xl text-xl font-bold ">Staff</button></li>
-            <li id="adminList" class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><button id="adminAccount" class="lg:text-4xl text-xl font-bold ">Admin</button></li>
+            <li id="studentList" class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling">
+                <button id="studentAccount" class="lg:text-4xl text-xl font-bold">Student</button>
+            </li>
+            <li id="staffList" class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling">
+                <button id="staffAccount" class="lg:text-4xl text-xl font-bold">Staff</button>
+            </li>
+            <li id="adminList" class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling">
+                <button id="adminAccount" class="lg:text-4xl text-xl font-bold">Admin</button>
+            </li>
         </ul>
     </div>
-    <div id="studentVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center hidden">
-        <iframe id="studentIframe" src="{{ url_for('static', filename='videos/placeholderVid.mp4') }}" class="w-full aspect-video rounded-md" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+    <div id="studentVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center hidden z-10" data-video="{{ student_demo }}">
+        <iframe id="studentIframe" class="w-full aspect-video rounded-md" frameborder="0" allow="autoplay" allowfullscreen></iframe>
     </div>
-    <div id="staffVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center hidden">
-        <iframe id="staffIframe" src="{{ url_for('static', filename='videos/bird.mp4') }}" class="w-full aspect-video rounded-md" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+    <div id="staffVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center hidden z-10" data-video="{{ staff_demo }}">
+        <iframe id="staffIframe" class="w-full aspect-video rounded-md" frameborder="0" allow="autoplay" allowfullscreen></iframe>
     </div>
-    <div id="adminVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center">
-        <iframe id="adminIframe" src="{{ url_for('static', filename='videos/field.mp4') }}" class="w-full aspect-video rounded-md" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+    <div id="adminVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center hidden z-10" data-video="{{ admin_demo }}">
+        <iframe id="adminIframe" class="w-full aspect-video rounded-md" frameborder="0" allow="autoplay" allowfullscreen></iframe>
     </div>
-    <script src="{{ url_for('static', filename='js/demonstration.js') }}"></script>    
+    <div class="flex justify-center fixed ">
+        <img class="w-1/2 opacity-10" src="{{ url_for('static', filename='images/TDP_LOGO.png') }}" alt="TDP Logo">
+    </div>
+    <script src="{{ url_for('static', filename='js/demonstration.js') }}"></script>      
 
 {% endblock %}

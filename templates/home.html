@@ -1,13 +1,19 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="flex flex-col justify-center items-center">
-        <div class="flex flex-row">
-            <div class="w-1/2"> 
-                <img class="" src="{{ url_for('static', filename='images/TDP_LOGO.png') }}" alt="TDP Logo">
-            </div>
-        </div>
-        <a href="/navigation" class="btn btn-primary shadow-md ">Learn More!</a>
+    <div class="flex flex-row justify-center items-center p-5 bg-gray-100 rounded-lg shadow-md max-w-5xl">
+        <img src="{{ url_for('static', filename='images/TDP_LOGO.png') }}" alt="TDP Logo" class="h-96">
+        <section class="flex justify-center flex-col gap-5">
+            <article class="text-wrap indent-8 text-justify">
+                The <strong class="text-lg italic">Tulong-Dunong Program (TDP)</strong> scholarship in the Philippines is a government initiative aimed at providing financial assistance to students, specifically to those financially disadvantaged pursuing higher education.
+                <strong  class="text-lg italic">TDP Scholarhub</strong> would explore the significance of digitalization in the realm of scholarships,
+                emphasizing the benefits, challenges, and implications of transitioning to digital platforms for scholarship application and management.
+                It would establish a foundation for understanding the impact of digital tools on increasing accessibility, efficiency,
+                and effectiveness in scholarship administration and shaping the future of higher education.
+            </article>
+            
+            <a href="/navigation" class="btn btn-primary shadow-md ">Learn More!</a>
+        </section>
     </div>
     
     <script>

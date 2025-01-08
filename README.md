@@ -12,7 +12,8 @@ Make sure you have the following installed on your system:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/wndll-S/TDP-Python-Project
+    git clone https://github.com/wndll-S/TDP-Python-Project 
+    ->
     cd TDP-Python-Project
     ```
 
@@ -46,3 +47,7 @@ Make sure you have the following installed on your system:
     ```
 
 Happy coding!
+
+
+## System Navigation Guide
+
