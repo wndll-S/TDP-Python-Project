@@ -27,19 +27,23 @@ Make sure you have the following installed on your system:
     ```bash
     pip install flask
     ```
+4. **Install Markdown:**
+    ```bash
+    pip install markdown
+    ```
 
-4. **Build Tailwind CSS:**
+5. **Build Tailwind CSS:**
     Run the build script:
     ```bash
     npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/output.css --minify
     ```
 
-5. **Install WSGI server:**
+6. **Install WSGI server:**
     ```bash
     pip install waitress
     ```
 
-6. **Run the Flask application:**
+7. **Run the Flask application:**
     ```bash
     flask --app app run --debug --port=5001 # For local testing
     or
