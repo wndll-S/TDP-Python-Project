@@ -28,20 +28,27 @@ Make sure you have the following installed on your system:
     pip install flask
     ```
 
-4. **Build Tailwind CSS:**
+4. **Install Webview:**
+    ```bash
+    pip install pywebview
+    ```
+
+5. **Build Tailwind CSS:**
     Run the build script:
     ```bash
     npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/output.css --minify
     ```
 
-5. **Install WSGI server:**
+6. **Install WSGI server:**
     ```bash
     pip install waitress
     ```
 
-6. **Run the Flask application:**
+7. **Run the Flask application:**
     ```bash
-    flask --app app run --debug --port=5001 # For local testing
+    flask --app app run --debug --port=5001 # For local testing and browser view
+    or
+    python app.py # for a separate web browser window
     or
     waitress-serve --host=127.0.0.1 --port=5001 app:app # For Production
     ```
@@ -49,5 +56,5 @@ Make sure you have the following installed on your system:
 Happy coding!
 
 
-## System Navigation Guide
+<!-- ## System Navigation Guide -->
 
