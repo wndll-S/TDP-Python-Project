@@ -41,7 +41,20 @@ def demonstration():
     student_demo = url_for('static', filename='videos/student.mp4')
     admin_demo = url_for('static', filename='videos/admin.mp4')
     staff_demo = url_for('static', filename='videos/staff.mp4')
-    return render_template('demonstration.html', student_demo=student_demo, admin_demo=admin_demo, staff_demo=staff_demo)
+    demo_props = {
+        'student_demo': student_demo,
+        'admin_demo': admin_demo,
+        'staff_demo': staff_demo
+    }
+    student_link = '<div class="p-5 flex justify-center"><a href="http://127.0.0.1:8000/register" target="_blank" rel="noopener noreferrer" class="btn btn-link">Visit Site - Student Account</a></div>'
+    staff_link = '<div class="p-5 flex justify-center"><a href="http://127.0.0.1:8000/staff/login" target="_blank" rel="noopener noreferrer" class="btn btn-link">Visit Site - Staff Account</a></div>'
+    admin_link = '<div class="p-5 flex justify-center"><a href="http://127.0.0.1:8000/admin/login" target="_blank" rel="noopener noreferrer" class="btn btn-link">Visit Site - Admin Account</a></div>'
+    link_props = {
+        'staff_link' : staff_link,
+        'student_link' : student_link,
+        'admin_link' : admin_link,
+    }
+    return render_template('demonstration.html', **demo_props, **link_props)
 
 @app.route("/user-manual")
 def manual():

@@ -15,14 +15,17 @@
             </li>
         </ul>
     </div>
-    <div id="studentVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center hidden z-10" data-video="{{ student_demo }}">
-        <iframe id="studentIframe" class="w-full aspect-video rounded-md" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+    <div id="studentVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center hidden z-10 flex-col" data-video="{{ student_demo }}">
+        <iframe id="studentIframe" class="w-full aspect-video rounded-md" frameborder="0" allowfullscreen></iframe>
+        {{ student_link|safe }}
     </div>
-    <div id="staffVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center hidden z-10" data-video="{{ staff_demo }}">
-        <iframe id="staffIframe" class="w-full aspect-video rounded-md" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+    <div id="staffVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center hidden z-10 flex-col" data-video="{{ staff_demo }}">
+        <iframe id="staffIframe" class="w-full aspect-video rounded-md" frameborder="0"  allowfullscreen></iframe>
+        {{ staff_link|safe }}
     </div>
-    <div id="adminVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center hidden z-10" data-video="{{ admin_demo }}">
-        <iframe id="adminIframe" class="w-full aspect-video rounded-md" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+    <div id="adminVid" class="w-screen lg:w-3/4 bg-white lg:rounded-md lg:shadow-lg flex justify-center hidden z-10 flex-col" data-video="{{ admin_demo }}">
+        <iframe id="adminIframe" class="w-full aspect-video rounded-md" frameborder="0"  allowfullscreen></iframe>
+        {{ admin_link|safe }}
     </div>
     <div class="flex justify-center fixed ">
         <img class="w-1/2 opacity-10" src="{{ url_for('static', filename='images/TDP_LOGO.png') }}" alt="TDP Logo">
