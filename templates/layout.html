@@ -6,10 +6,10 @@
     <title>TDP Scholarhub Guide</title>
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
-
+    <link rel="icon" href="{{ url_for('favicon') }}" type="image/x-icon">
 </head>
 <body class="bg-[rgb(245,242,235)] box-border">
-    <a href="/navigation" id="home" class="btn bg-gray-50 fixed">
+    <a href="{{ url_for('navigation') }}" id="home" class="btn bg-gray-50 fixed">
         <svg class="w-7 hover:fill-gray-50" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet" >
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

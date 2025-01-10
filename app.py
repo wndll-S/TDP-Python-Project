@@ -1,6 +1,8 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, send_from_directory
 import markdown
 import os
+import webview
+import threading
 
 app = Flask(__name__)
 
@@ -51,3 +53,19 @@ def design():
     pdf_url = url_for('static', filename='docs/design.pdf')
     return render_template('design.html', pdf_url=pdf_url)
 
+def run_flask():
+    app.run(debug=True, use_reloader=False, port=5001)  # Flask runs on port 5001
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'images/favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+if __name__ == "__main__":
+    
+    # Run Flask in a separate thread
+    flask_thread = threading.Thread(target=run_flask)
+    flask_thread.start()
+
+    # Create a webview window that will display the Flask content
+    webview.create_window('TDP Scholarhub', 'http://127.0.0.1:5001')
+    webview.start()

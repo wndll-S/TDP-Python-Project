@@ -4,10 +4,10 @@
 
     <div class="flex flex-col z-10"> 
         <ul class="text-center flex flex-col gap-1 lg:gap-2 lg:p-5 p-2 rounded-md">
-            <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="/" class="lg:text-4xl text-xl font-bold ">Home</a></li>
+            <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="{{ url_for('home') }}" class="lg:text-4xl text-xl font-bold ">Home</a></li>
             <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="http://127.0.0.1:8000/" class="lg:text-4xl text-xl font-bold ">TDP ScholarHub Portal</a></li>
             <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><button onclick="documentation.showModal()" class="lg:text-4xl text-xl font-bold">Documentation</button></li>
-            <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="/demonstration-video" class="lg:text-4xl text-xl font-bold">Demonstration Video</a></li>
+            <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="{{ url_for('demonstration') }}" class="lg:text-4xl text-xl font-bold">Demonstration Video</a></li>
         </ul>
     </div>
 
@@ -18,9 +18,9 @@
         <div class="modal-box">
             <h3 class="text-lg font-bold">Documentation</h3>
             <ul class="text-center flex flex-col gap-1 lg:gap-2 lg:p-5 p-2 rounded-md">
-                <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="/system-design" target="_blank" class="lg:text-4xl text-xl font-bold ">System Design</a></li>
-                <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="/user-manual" target="_blank" class="lg:text-4xl text-xl font-bold ">User Manual</a></li>
-                <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="/installation" class="lg:text-4xl text-xl font-bold">Installation Guide</a></li>
+                <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="{{ url_for('design') }}" target="_blank" class="lg:text-4xl text-xl font-bold ">System Design</a></li>
+                <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="{{ url_for('manual') }}" target="_blank" class="lg:text-4xl text-xl font-bold ">User Manual</a></li>
+                <li class="flex btn lg:btn-lg btn-md btn-outline bg-white drop-shadow-lg sibling"><a href="{{ url_for('installation') }}" class="lg:text-4xl text-xl font-bold">Installation Guide</a></li>
             </ul>
         </div>
         <form method="dialog" class="modal-backdrop">
